@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    10:57:12 03/27/2021 
 -- Design Name: 
--- Module Name:    Arithmetic Logic Unit - Behavioral 
+-- Module Name:    ALU - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -31,67 +31,68 @@ USE IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-ENTITY ArithmeticLogicUnit IS
+ENTITY ALU IS
 
     PORT (
-        ALU_operation : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
-        inputA : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        inputB : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        output : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        SEL_ALU : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+        operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        operando2 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        resultado : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        R_FLAG : OUT STD_LOGIC_VECTOR(2 down TO 0)
     );
 
-END ArithmeticLogicUnit;
+END ALU;
 
-ARCHITECTURE Behavioral OF ArithmeticLogicUnit IS
+ARCHITECTURE Behavioral OF ALU IS
 
 BEGIN
 
-    ALU : PROCESS (ALU_operation, inputA, inputB)
+    ALU : PROCESS (SEL_ALU, operando1, operando2)
 
         VARIABLE vector : STD_LOGIC_VECTOR(7 DOWNTO 0);
-        
+
     BEGIN
 
-        CASE(ALU_operation) IS
+        CASE(SEL_ALU) IS
 
             -- A + B 
-            WHEN "0000" => vector := (inputA + inputB);
+            WHEN "0000" => vector := (operando1 + operando2);
 
             -- A - B
-            WHEN "0001" => vector := (inputA - inputB);
+            WHEN "0001" => vector := (operando1 - operando2);
 
             -- A and B
-            WHEN "0010" => vector := (inputA AND inputB);
+            WHEN "0010" => vector := (operando1 AND operando2);
 
             -- A nand B
-            WHEN "0011" => vector := (inputA NAND inputB);
+            WHEN "0011" => vector := (operando1 NAND operando2);
 
             -- A or B
-            WHEN "0100" => vector := (inputA OR inputB);
+            WHEN "0100" => vector := (operando1 OR operando2);
 
             -- A nor B 
-            WHEN "0101" => vector := (inputA NOR inputB);
+            WHEN "0101" => vector := (operando1 NOR operando2);
 
             -- A xor B
-            WHEN "0110" => vector := (inputA XOR inputB);
+            WHEN "0110" => vector := (operando1 XOR operando2);
 
             -- A xnor B
-            WHEN "0111" => vector := (inputA XNOR inputB);
+            WHEN "0111" => vector := (operando1 XNOR operando2);
 
             -- shift_left(A, B)
-            WHEN "1000" => vector := STD_LOGIC_VECTOR(shift_left(signed(inputA), to_integer(unsigned(inputB))));
+            WHEN "1000" => vector := STD_LOGIC_VECTOR(shift_left(signed(operando1), to_integer(unsigned(operando2))));
 
             -- shift_right(A, B)
-            WHEN "1001" => vector := STD_LOGIC_VECTOR(shift_right(signed(inputA), to_integer(unsigned(inputB))));
+            WHEN "1001" => vector := STD_LOGIC_VECTOR(shift_right(signed(operando1), to_integer(unsigned(operando2))));
 
             -- < R_FLAG = 0; > R_FLAG = 1; /= R_FLAG = 2
-            WHEN "1010" => vector := "11111111"; -- TODO: Change this behaviour
+            WHEN "1010" => -- TODO
 
             WHEN OTHERS => vector := "00000000";
 
         END CASE;
 
-        output <= vector;
+        resultado <= vector;
 
     END PROCESS ALU;
 

@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    15:05:14 03/27/2021 
 -- Design Name: 
--- Module Name:    ProgramCounter - Behavioral 
+-- Module Name:    PC - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -30,33 +30,34 @@ USE IEEE.STD_LOGIC_SIGNED.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-ENTITY ProgramCounter IS
+ENTITY PC IS
 
     PORT (
-        clock : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-        const : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        jump : IN STD_LOGIC
+        constante : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        ESCR_PC : IN STD_LOGIC;
+        endereco : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+
     );
 
-END ProgramCounter;
+END PC;
 
-ARCHITECTURE Behavioral OF ProgramCounter IS
+ARCHITECTURE Behavioral OF PC IS
 
 BEGIN
 
-    programCounter : PROCESS (clock, reset, const, jump)
+    PC : PROCESS (clock, reset, constante, ESCR_PC)
 
         VARIABLE counter : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     BEGIN
-    
+
         IF rising_edge(clock) THEN
 
             IF reset = '0' THEN
 
-                IF jump = '0' THEN
+                IF ESCR_PC = '0' THEN
                     counter := counter + 1;
 
                 ELSE
@@ -67,12 +68,12 @@ BEGIN
             ELSE
                 counter := "00000000";
 
-                address <= counter;
-
             END IF;
 
+            address <= counter;
+            
         END IF;
 
-    END PROCESS programCounter;
+    END PROCESS PC;
 
 END Behavioral;

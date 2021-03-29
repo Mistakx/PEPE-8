@@ -1,0 +1,3 @@
+vhdtdtfi -lib work MUX_PC.vhd -prj PEPE-8 -o MUX_PC.spl -module MUX_PC -template C:/Tools/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 MUX_PC.spl C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/MUX_PC.sym 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/MUX_PC.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/MUX_PC.syr" 
