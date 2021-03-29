@@ -1,7 +1,0 @@
-[Inputs]
-=ALU_operation[3:0]=
-=inputA[7:0]=
-=inputB[7:0]=
-[Outputs]
-=output[7:0]=
-[BiDir]

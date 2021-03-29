@@ -1,6 +1,0 @@
-[Inputs]
-S_FLAG
-=SEL_PC[1:0]=
-[Outputs]
-ESCR_PC
-[BiDir]
