@@ -55,21 +55,25 @@ BEGIN
 
         IF falling_edge(clk) THEN
 
-            CASE(SEL_FLAG) IS
+            IF (ESCR_F = '1') THEN
 
-                WHEN "000" => temp := is_zero;
+                CASE(SEL_FLAG) IS
 
-                WHEN "001" => temp := bit_maior_peso;
+                    WHEN "000" => temp := is_zero;
 
-                WHEN "010" => temp := R_FLAG(2);
+                    WHEN "001" => temp := bit_maior_peso;
 
-                WHEN "011" => temp := R_FLAG(1);
+                    WHEN "010" => temp := R_FLAG(2);
 
-                WHEN "100" => temp := R_FLAG(0);
+                    WHEN "011" => temp := R_FLAG(1);
 
-                WHEN OTHERS => temp := '0';
+                    WHEN "100" => temp := R_FLAG(0);
 
-            END CASE;
+                    WHEN OTHERS => temp := '0';
+
+                END CASE;
+
+            END IF;
 
         END IF;
 
