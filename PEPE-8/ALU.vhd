@@ -37,8 +37,8 @@ ENTITY ALU IS
         SEL_ALU : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
         operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         operando2 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        resultado : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-        R_FLAG : OUT STD_LOGIC_VECTOR(2 down TO 0)
+        resultado : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        R_FLAG : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
 
 END ALU;

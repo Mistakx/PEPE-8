@@ -47,21 +47,17 @@ BEGIN
 
 	MUX_R : PROCESS (SEL_D, constante, dados_M, dados_IN, resultado)
 
-		VARIABLE temp : STD_LOGIC_VECTOR;
-
 	BEGIN
 
 		CASE (SEL_D) IS
 
-			WHEN "00" => temp := constante;
-			WHEN "01" => temp := dados_M;
-			WHEN "10" => temp := dados_IN;
-			WHEN "11" => temp := resultado;
-			WHEN OTHERS => temp := "00000000";
+			WHEN "00" => dados_R <= constante;
+			WHEN "01" => dados_R <= dados_M;
+			WHEN "10" => dados_R <= dados_IN;
+			WHEN "11" => dados_R <= resultado;
+			WHEN OTHERS => dados_R <= "00000000";
 
 		END CASE;
-
-		dados_R <= temp;
 
 	END PROCESS MUX_R;
 

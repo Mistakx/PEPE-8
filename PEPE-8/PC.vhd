@@ -38,7 +38,6 @@ ENTITY PC IS
         constante : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         ESCR_PC : IN STD_LOGIC;
         endereco : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-
     );
 
 END PC;
@@ -47,31 +46,34 @@ ARCHITECTURE Behavioral OF PC IS
 
 BEGIN
 
-    PC : PROCESS (clock, reset, constante, ESCR_PC)
+    PC : PROCESS (clk, reset, constante, ESCR_PC)
 
         VARIABLE counter : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     BEGIN
 
-        IF rising_edge(clock) THEN
+        IF rising_edge(clk) THEN
 
             IF reset = '0' THEN
 
                 IF ESCR_PC = '0' THEN
+
                     counter := counter + 1;
 
                 ELSE
-                    counter := const;
+
+                    counter := constante;
 
                 END IF;
 
             ELSE
+
                 counter := "00000000";
 
             END IF;
 
-            address <= counter;
-            
+            endereco <= counter;
+
         END IF;
 
     END PROCESS PC;

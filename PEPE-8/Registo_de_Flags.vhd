@@ -35,7 +35,7 @@ ENTITY Registo_de_Flags IS
         clk : IN STD_LOGIC;
         is_zero : IN STD_LOGIC;
         R_FLAG : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-        ESCR_FLAG : IN STD_LOGIC;
+        ESCR_F : IN STD_LOGIC;
         bit_maior_peso : IN STD_LOGIC;
         SEL_FLAG : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
         S_FLAG : OUT STD_LOGIC
@@ -47,9 +47,7 @@ ARCHITECTURE Behavioral OF Registo_de_Flags IS
 
 BEGIN
 
-    Registo_de_Flags : PROCESS (clk)
-
-        VARIABLE temp : STD_LOGIC;
+    registo_de_flags : PROCESS (clk)
 
     BEGIN
 
@@ -59,17 +57,12 @@ BEGIN
 
                 CASE(SEL_FLAG) IS
 
-                    WHEN "000" => temp := is_zero;
-
-                    WHEN "001" => temp := bit_maior_peso;
-
-                    WHEN "010" => temp := R_FLAG(2);
-
-                    WHEN "011" => temp := R_FLAG(1);
-
-                    WHEN "100" => temp := R_FLAG(0);
-
-                    WHEN OTHERS => temp := '0';
+                    WHEN "000" => S_FLAG <= is_zero;
+                    WHEN "001" => S_FLAG <= bit_maior_peso;
+                    WHEN "010" => S_FLAG <= R_FLAG(2);
+                    WHEN "011" => S_FLAG <= R_FLAG(1);
+                    WHEN "100" => S_FLAG <= R_FLAG(0);
+                    WHEN OTHERS => S_FLAG <= '0';
 
                 END CASE;
 
@@ -77,6 +70,6 @@ BEGIN
 
         END IF;
 
-    END PROCESS Registo_de_Flags;
+    END PROCESS registo_de_flags;
 
 END Behavioral;

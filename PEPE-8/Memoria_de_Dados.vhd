@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:37:20 03/30/2021 
+-- Create Date:    11:45:03 04/01/2021 
 -- Design Name: 
--- Module Name:    Gestor_de_Perifericos - Behavioral 
+-- Module Name:    Memoria_de_Dados - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,40 +30,42 @@ USE IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-ENTITY Gestor_de_Perifericos IS
+ENTITY Memoria_de_Dados IS
 
     PORT (
         clk : IN STD_LOGIC;
-        ESCR_P : IN STD_LOGIC;
-        PIN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        constante : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        dados_IN : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-    );
+        dados_M : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        WR : IN STD_LOGIC);
 
-END Gestor_de_Perifericos;
+END Memoria_de_Dados;
 
-ARCHITECTURE Behavioral OF Gestor_de_Perifericos IS
+ARCHITECTURE Behavioral OF Memoria_de_Dados IS
 
 BEGIN
 
-    gestor_de_perifericos : PROCESS (clk, ESCR_P, PIN, operando1)
+    memoria_de_dados : PROCESS (clk)
+
+        TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+        variable ram : ram_type;
 
     BEGIN
 
         IF rising_edge(clk) THEN
 
-            IF (ESCR_P = '1') THEN
+            IF (WR = '1') THEN
 
-                POUT <= operando1;
+                ram(to_integer(unsigned(constante))) := operando1;
 
             ELSE
 
-                dados_IN <= PIN;
+                dados_M <= ram(to_integer(unsigned(constante)));
 
             END IF;
+
         END IF;
 
-    END PROCESS gestor_de_perifericos;
+    END PROCESS memoria_de_dados;
 
 END Behavioral;

@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -30,14 +31,19 @@ USE IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 ENTITY banco_de_registos IS
+
     PORT (
+
         clk : IN STD_LOGIC;
         sel_R2 : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
         sel_R1 : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
         escr_R : IN STD_LOGIC;
-        dados_R : IN STD_LOGIC;
+        dados_R : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         operando1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        operando2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+        operando2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+
+    );
+
 END banco_de_registos;
 
 ARCHITECTURE Behavioral OF banco_de_registos IS
@@ -46,8 +52,8 @@ BEGIN
 
     banco_de_registos : PROCESS (clk, sel_R1, sel_R2, escr_R, dados_R)
 
-        VARIABLE registo : STD_LOGIC_VECTOR (7 DOWNTO 0);
-        TYPE array_registos IS ARRAY(0 TO 7) OF registo;
+        TYPE array_registos_type IS ARRAY(0 TO 7) OF STD_LOGIC_VECTOR (7 DOWNTO 0);
+        variable array_registos : array_registos_type;
 
     BEGIN
 
@@ -55,11 +61,17 @@ BEGIN
 
             IF (escr_R = '1') THEN
 
-                dados_R
+            array_registos(to_integer(unsigned(SEL_R1))) := dados_R;
+
+            ELSE
+                
+                operando1 <= array_registos(to_integer(unsigned(SEL_R1)));
+                operando2 <= array_registos(to_integer(unsigned(SEL_R2)));
 
             END IF;
 
         END IF;
 
     END PROCESS banco_de_registos;
+
 END Behavioral;

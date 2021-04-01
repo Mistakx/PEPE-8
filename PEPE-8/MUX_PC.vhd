@@ -30,10 +30,13 @@ USE IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 ENTITY MUX_PC IS
+
     PORT (
         S_FLAG : IN STD_LOGIC;
-        ESCR_PC : OUT STD_LOGIC;
-        SEL_PC : IN STD_LOGIC_VECTOR (1 DOWNTO 0));
+        SEL_PC : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+        ESCR_PC : OUT STD_LOGIC
+    );
+    
 END MUX_PC;
 
 ARCHITECTURE Behavioral OF MUX_PC IS
@@ -42,24 +45,17 @@ BEGIN
 
     MUX_PC : PROCESS (S_FLAG, SEL_PC)
 
-    variable temp : STD_LOGIC;
-
     BEGIN
 
-        case( SEL_PC ) is
-        
-            when "00" => temp := S_FLAG;
-            
-            when "01" => temp := '1';
+        CASE(SEL_PC) IS
 
-            when "10" => temp := '0';
-        
-            when others => temp := '0';
-        
-        end case ;
+            WHEN "00" => ESCR_PC <= S_FLAG;
+            WHEN "01" => ESCR_PC <= '1';
+            WHEN "10" => ESCR_PC <= '0';
+            WHEN OTHERS => ESCR_PC <= '0';
 
-        ESCR_PC <= temp;
+        END CASE;
 
-        END PROCESS MUX_PC;
+    END PROCESS MUX_PC;
 
-    END Behavioral;
+END Behavioral;
