@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    13:00:04 03/29/2021 
+-- Create Date:    20:56:42 04/05/2021 
 -- Design Name: 
--- Module Name:    test - Behavioral 
+-- Module Name:    is_zero - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -17,8 +17,8 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,35 +29,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity test is
-    Port ( output1 : out  STD_LOGIC;
-			  output2 : out  STD_LOGIC;
-			  output3 : out STD_LOGIC_VECTOR (7 DOWNTO 0);
-			  input : in STD_LOGIC
-	 );
-end test;
+ENTITY is_zero IS
 
-architecture Behavioral of test is
+    PORT (
+        input : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        output : OUT STD_LOGIC
+    );
 
- TYPE ram_type IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(1 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
- signal ram : ram_type;
+END is_zero;
 
-begin
+ARCHITECTURE Behavioral OF is_zero IS
 
-	process (input)
-	
-	begin
-	
-	
-	case( input ) is
-	
-		when '1' => ram(1)(1) <= '1';
-		when others => null;
-		
-	end case ;
-	
-	end process;
+BEGIN
 
+    zero : PROCESS (input)
 
-end Behavioral;
+    BEGIN
 
+        IF (input = "00000000") THEN
+            output <= '1';
+
+        ELSE
+            output <= '0';
+
+        END IF;
+
+    END PROCESS zero;
+
+END Behavioral;

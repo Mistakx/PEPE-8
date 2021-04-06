@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/ArithmeticLogicUnit_isim_beh.exe" -prj "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/ArithmeticLogicUnit_beh.prj" "work.ArithmeticLogicUnit" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_isim_beh.exe" -prj "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_beh.prj" "work.test_test_bench" 
