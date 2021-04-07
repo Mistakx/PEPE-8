@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Reading design: motherboard.prj
 
@@ -188,10 +188,6 @@ Unit <motherboard> synthesized.
 
 Synthesizing Unit <Memoria_de_Instrucoes>.
     Related source file is "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\Memoria_de_Instrucoes.vhd".
-WARNING:Xst:647 - Input <endereco> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <opcode> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <reg> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <constante> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <Memoria_de_Instrucoes> synthesized.
@@ -207,7 +203,6 @@ Unit <Memoria_de_Dados> synthesized.
 
 Synthesizing Unit <Processor>.
     Related source file is "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\Processor.vhd".
-WARNING:Xst:653 - Signal <operando1> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <Processor> synthesized.
@@ -478,6 +473,14 @@ WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_3> of seque
 WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_2> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_1> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_0> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_7> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_6> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_5> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_4> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_3> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_2> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_1> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_0> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_7> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_6> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_5> of sequential type is unconnected in block <motherboard>.
@@ -486,21 +489,13 @@ WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/opera
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_2> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_1> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_0> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_7> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos8> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_6> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos7> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_5> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos6> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_4> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos5> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_3> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos4> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_2> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos3> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_1> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos2> is unconnected in block <motherboard>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_0> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos1> is unconnected in block <motherboard>.
 
 Mapping all equations...
@@ -605,14 +600,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 39.00 secs
-Total CPU time to Xst completion: 39.57 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 16.08 secs
  
 --> 
 
-Total memory usage is 4648812 kilobytes
+Total memory usage is 4617412 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   72 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

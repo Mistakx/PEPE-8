@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_isim_beh.exe" -prj "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_beh.prj" "work.test_test_bench" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_isim_beh.exe" -prj "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_beh.prj" "work.motherboard_test_bench" 

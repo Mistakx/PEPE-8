@@ -45,15 +45,25 @@ ARCHITECTURE Behavioral OF Memoria_de_Instrucoes IS
 
 BEGIN
 
-    memoria_instrucoes: process(endereco)
+    memoria_instrucoes : PROCESS (endereco)
+	 
+	 TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(18 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
+    VARIABLE ram : ram_type;
 
-    TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(18 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
-    variable ram : ram_type;
+    BEGIN
 
-    begin
-        
+        CASE(endereco) IS
 
-    end process memoria_instrucoes;
+            WHEN "00000000" => opcode <= "00010";
+            reg <= "000XXX";
+            constante <= "00001110";
 
+            WHEN OTHERS => opcode <= "XXXXX";
+            reg <= "XXXXXX";
+            constante <= "XXXXXXXX";
+
+        END CASE;
+
+    END PROCESS memoria_instrucoes;
 
 END Behavioral;

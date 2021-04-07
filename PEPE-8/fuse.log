@@ -1,19 +1,46 @@
-Running: C:\Tools\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_isim_beh.exe -prj C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_beh.prj work.test_test_bench 
+Running: C:\Tools\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_isim_beh.exe -prj C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_beh.prj work.motherboard_test_bench 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test.vhd" into library work
-Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Rom_de_descodificacao.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Registo_de_Flags.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/PC.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/MUX_R.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/MUX_PC.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Gestor_de_Perifericos.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/banco_de_registos.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Memoria_de_Instrucoes.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Memoria_de_Dados.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard.vhd" into library work
+Parsing VHDL file "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture behavioral of entity test [test_default]
-Compiling architecture behavior of entity test_test_bench
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_signed
+Compiling architecture behavioral of entity Memoria_de_Instrucoes [memoria_de_instrucoes_default]
+Compiling architecture behavioral of entity Memoria_de_Dados [memoria_de_dados_default]
+Compiling architecture behavioral of entity PC [pc_default]
+Compiling architecture behavioral of entity Rom_de_Descodificacao [rom_de_descodificacao_default]
+Compiling architecture behavioral of entity MUX_R [mux_r_default]
+Compiling architecture behavioral of entity banco_de_registos [banco_de_registos_default]
+Compiling architecture behavioral of entity MUX_PC [mux_pc_default]
+Compiling architecture behavioral of entity Registo_de_Flags [registo_de_flags_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity Gestor_de_Perifericos [gestor_de_perifericos_default]
+Compiling architecture behavioral of entity is_zero [is_zero_default]
+Compiling architecture struct of entity Processor [processor_default]
+Compiling architecture struct of entity motherboard [motherboard_default]
+Compiling architecture behavior of entity motherboard_test_bench
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 VHDL Units
-Built simulation executable C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench_isim_beh.exe
-Fuse Memory Usage: 29852 KB
-Fuse CPU Usage: 687 ms
+Waiting for 11 sub-compilation(s) to finish...
+Compiled 32 VHDL Units
+Built simulation executable C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_isim_beh.exe
+Fuse Memory Usage: 37516 KB
+Fuse CPU Usage: 999 ms

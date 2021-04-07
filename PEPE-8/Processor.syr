@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.27 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.27 secs
  
 --> Reading design: Processor.prj
 
@@ -435,9 +435,9 @@ Primitive and Black Box Usage:
 #      RAM32X1D                    : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 47
+# IO Buffers                       : 55
 #      IBUF                        : 30
-#      OBUF                        : 17
+#      OBUF                        : 25
 
 Device utilization summary:
 ---------------------------
@@ -453,15 +453,15 @@ Slice Logic Utilization:
        Number used as RAM:               16
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    198
-   Number with an unused Flip Flop:     149  out of    198    75%  
-   Number with an unused LUT:            19  out of    198     9%  
-   Number of fully used LUT-FF pairs:    30  out of    198    15%  
+ Number of LUT Flip Flop pairs used:    197
+   Number with an unused Flip Flop:     148  out of    197    75%  
+   Number with an unused LUT:            18  out of    197     9%  
+   Number of fully used LUT-FF pairs:    31  out of    197    15%  
    Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                          62
- Number of bonded IOBs:                  48  out of    210    22%  
+ Number of bonded IOBs:                  56  out of    210    26%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -505,7 +505,7 @@ Speed Grade: -3
 
    Minimum period: 3.315ns (Maximum Frequency: 301.659MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 0.650ns
+   Maximum output required time after clock: 0.746ns
    Maximum combinational path delay: 1.156ns
 
 Timing Details:
@@ -593,22 +593,22 @@ Offset:              3.133ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 16 / 16
+  Total number of paths / destination ports: 24 / 24
 -------------------------------------------------------------------------
-Offset:              0.650ns (Levels of Logic = 1)
-  Source:            processor_PC/endereco_6 (FF)
-  Destination:       endereco<6> (PAD)
+Offset:              0.746ns (Levels of Logic = 1)
+  Source:            processor_banco_de_registos/operando1_7 (FF)
+  Destination:       operando1<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: processor_PC/endereco_6 to endereco<6>
+  Data Path: processor_banco_de_registos/operando1_7 to operando1<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              3   0.361   0.289  processor_PC/endereco_6 (processor_PC/endereco_6)
-     OBUF:I->O                 0.000          endereco_6_OBUF (endereco<6>)
+     FDE:C->Q             25   0.361   0.385  processor_banco_de_registos/operando1_7 (processor_banco_de_registos/operando1_7)
+     OBUF:I->O                 0.000          operando1_7_OBUF (operando1<7>)
     ----------------------------------------
-    Total                      0.650ns (0.361ns logic, 0.289ns route)
-                                       (55.5% logic, 44.5% route)
+    Total                      0.746ns (0.361ns logic, 0.385ns route)
+                                       (48.4% logic, 51.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -639,7 +639,7 @@ Clock to Setup on destination clock clk
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-clk                                       |    3.176|    1.658|    1.611|         |
+clk                                       |    3.180|    1.658|    1.616|         |
 processor_ALU/SEL_ALU[3]_PWR_16_o_Mux_14_o|         |    2.577|         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
@@ -648,18 +648,18 @@ Clock to Setup on destination clock processor_ALU/SEL_ALU[3]_PWR_16_o_Mux_14_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    3.165|         |
+clk            |         |         |    3.169|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 34.49 secs
+Total REAL time to Xst completion: 39.00 secs
+Total CPU time to Xst completion: 38.57 secs
  
 --> 
 
-Total memory usage is 4648812 kilobytes
+Total memory usage is 4648792 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (   0 filtered)
