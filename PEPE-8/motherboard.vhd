@@ -34,15 +34,8 @@ ENTITY motherboard IS
     PORT (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        endereco : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         PIN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        WR : IN STD_LOGIC;
-        operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-
-        POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        opcode : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
-        reg : OUT STD_LOGIC_VECTOR (5 DOWNTO 0);
-        constante : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
 
 END motherboard;
@@ -71,11 +64,40 @@ ARCHITECTURE struct OF motherboard IS
 
     END COMPONENT;
 
-    -- Memoria de instruções signals
+    COMPONENT Processor IS
 
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            opcode : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+            reg : IN STD_LOGIC_VECTOR (5 DOWNTO 0);
+            constante : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            dados_M : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            PIN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+
+            endereco : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+            WR : OUT STD_LOGIC;
+            operando1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+            POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        );
+
+    END COMPONENT;
+
+    -- Memoria de instruções signals
+    SIGNAL signal_endereco : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_opcode : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL signal_reg : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL signal_constante : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     -- Memoria de dados signals
-
+    SIGNAL signal_operando1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_WR : STD_LOGIC;
+    SIGNAL signal_dados_M : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
+
+    motherboard_Memoria_de_Instrucoes : Memoria_de_Instrucoes PORT MAP(signal_endereco, signal_opcode, signal_reg, signal_constante);
+    motherboard_Memoria_de_Dados : Memoria_de_Dados PORT MAP(clk, signal_constante, signal_operando1, signal_dados_M, signal_WR);
+    motherboard_processor : processor PORT MAP(clk, reset, signal_opcode, signal_reg, signal_constante, signal_dados_M, PIN, signal_endereco, signal_WR, signal_operando1, POUT);
+
 END struct;

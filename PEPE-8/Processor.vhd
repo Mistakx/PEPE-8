@@ -211,6 +211,7 @@ ARCHITECTURE struct OF Processor IS
 BEGIN
 
     signal_bit_maior_peso <= signal_operando1(7);
+    operando1 <= signal_operando1;
 
     processor_PC : PC PORT MAP(clk, reset, constante, signal_ESCR_PC, endereco);
     processor_Rom_de_Descodificacao : Rom_de_Descodificacao PORT MAP(opcode, reg, WR, signal_escr_P, signal_sel_D, signal_sel_R2, signal_sel_R1, signal_ESCR_R, signal_sel_ALU, signal_escr_F, signal_sel_F, signal_SEL_PC);
