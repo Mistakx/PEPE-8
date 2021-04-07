@@ -72,11 +72,7 @@ at 175 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/process
 at 185 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 195 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 205 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 215 ns(1), Instance /motherboard_test_bench/uut/motherboard_Memoria_de_Dados/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 215 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 215 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 225 ns(1), Instance /motherboard_test_bench/uut/motherboard_Memoria_de_Dados/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 225 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 225 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 235 ns(1), Instance /motherboard_test_bench/uut/motherboard_Memoria_de_Dados/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 235 ns(1), Instance /motherboard_test_bench/uut/motherboard_processor/processor_banco_de_registos/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

@@ -56,7 +56,15 @@ BEGIN
 
             WHEN "00000000" => opcode <= "00010";
             reg <= "000XXX";
-            constante <= "00001110";
+            constante <= "00000000";
+
+            WHEN "00000001" => opcode <= "00010";
+            reg <= "001XXX";
+            constante <= "00000001";
+				
+				WHEN "00000010" => opcode <= "00010";
+            reg <= "010XXX";
+            constante <= "00000010";
 
             WHEN OTHERS => opcode <= "XXXXX";
             reg <= "XXXXXX";

@@ -1,0 +1,1 @@
+vhdtdtfi -prj PEPE-8 -o C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Memoria_de_Instrucoes.tfi -module Memoria_de_Instrucoes -template C:/Tools/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work Memoria_de_Instrucoes.vhd 

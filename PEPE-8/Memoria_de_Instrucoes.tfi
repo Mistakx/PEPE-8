@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+Memoria_de_Instrucoes instance_name (
+    .endereco(endereco), 
+    .opcode(opcode), 
+    .reg(reg), 
+    .constante(constante)
+    );
+
+

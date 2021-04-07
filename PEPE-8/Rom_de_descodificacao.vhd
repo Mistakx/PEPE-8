@@ -90,7 +90,17 @@ BEGIN
                 -- Other
                 when others => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "10"; escr_F <= '0'; sel_F <= "XXX"; -- NOP
             
-            end case ;            
+            end case ;
+            
+            -- Registries
+            SEL_R1(2) <= reg(5);
+            SEL_R1(1) <= reg(4);
+            SEL_R1(0) <= reg(3);
+
+            SEL_R2(2) <= reg(2);
+            SEL_R2(1) <= reg(1);
+            SEL_R2(0) <= reg(0);
+
                 
         end process rom_descodificacao;
 

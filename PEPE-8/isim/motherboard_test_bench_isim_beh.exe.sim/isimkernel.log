@@ -2,9 +2,28 @@ Command line:
    motherboard_test_bench_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51611
+     -socket  51892
 
-Wed Apr 07 18:41:03 2021
+Wed Apr 07 19:45:32 2021
 
 
- Elaboration Time: 0.046875 sec
+ Elaboration Time: 0.0625 sec
+
+ Current Memory Usage: 5149.8 Meg
+
+ Total Signals          : 107
+ Total Nets             : 129
+ Total Signal Drivers   : 29
+ Total Blocks           : 18
+ Total Primitive Blocks : 15
+ Total Processes        : 15
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 631
+Total Line Count : 106
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 4677.94 Meg
+
+Wed Apr 07 20:29:40 2021
+

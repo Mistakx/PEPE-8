@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.28 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.28 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Reading design: motherboard.prj
 
@@ -129,9 +129,6 @@ Parsing architecture <Behavioral> of entity <gestor_de_perifericos>.
 Parsing VHDL file "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\banco_de_registos.vhd" into library work
 Parsing entity <banco_de_registos>.
 Parsing architecture <Behavioral> of entity <banco_de_registos>.
-Parsing VHDL file "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\ALU.vhd" into library work
-Parsing entity <ALU>.
-Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\Processor.vhd" into library work
 Parsing entity <Processor>.
 Parsing architecture <struct> of entity <processor>.
@@ -169,8 +166,7 @@ Elaborating entity <banco_de_registos> (architecture <Behavioral>) from library 
 Elaborating entity <MUX_PC> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Registo_de_Flags> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <ALU> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\Processor.vhd" Line 143: <alu> remains a black-box since it has no binding entity.
 
 Elaborating entity <Gestor_de_Perifericos> (architecture <Behavioral>) from library <work>.
 
@@ -260,37 +256,6 @@ Synthesizing Unit <Registo_de_Flags>.
 	inferred   1 Multiplexer(s).
 Unit <Registo_de_Flags> synthesized.
 
-Synthesizing Unit <ALU>.
-    Related source file is "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\ALU.vhd".
-WARNING:Xst:653 - Signal <R_FLAG> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 8-bit adder for signal <operando1[7]_operando2[7]_add_0_OUT> created at line 59.
-    Found 8-bit subtractor for signal <operando1[7]_operando2[7]_sub_2_OUT<7:0>> created at line 62.
-    Found 8-bit shifter logical left for signal <operando1[7]_operando2[7]_shift_left_8_OUT> created at line 2973
-    Found 8-bit shifter arithmetic right for signal <operando1[7]_operando2[7]_shift_right_9_OUT> created at line 2982
-    Found 8-bit 13-to-1 multiplexer for signal <resultado> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_11_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_13_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_15_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_17_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_19_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_21_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_23_o> created at line 56.
-    Found 1-bit 12-to-1 multiplexer for signal <SEL_ALU[3]_GND_16_o_Mux_25_o> created at line 56.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ALU.vector<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred   8 Latch(s).
-	inferred  11 Multiplexer(s).
-	inferred   2 Combinational logic shifter(s).
-Unit <ALU> synthesized.
-
 Synthesizing Unit <Gestor_de_Perifericos>.
     Related source file is "C:\Users\Mistakx\Desktop\PEPE-8\PEPE-8\Gestor_de_Perifericos.vhd".
     Found 8-bit register for signal <dados_IN>.
@@ -313,25 +278,15 @@ Macro Statistics
  256x8-bit single-port RAM                             : 1
  32x15-bit single-port Read Only RAM                   : 1
  8x8-bit dual-port RAM                                 : 1
-# Adders/Subtractors                                   : 3
- 8-bit adder                                           : 2
- 8-bit subtractor                                      : 1
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
 # Registers                                            : 7
  1-bit register                                        : 1
  8-bit register                                        : 6
-# Latches                                              : 8
- 1-bit latch                                           : 8
-# Multiplexers                                         : 14
- 1-bit 12-to-1 multiplexer                             : 8
+# Multiplexers                                         : 3
  1-bit 7-to-1 multiplexer                              : 1
- 8-bit 13-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 1
  8-bit 4-to-1 multiplexer                              : 1
-# Logic shifters                                       : 2
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
-# Xors                                                 : 2
- 8-bit xor2                                            : 2
 
 =========================================================================
 
@@ -339,14 +294,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <processor_PC> is unconnected in block <motherboard_processor>.
-   It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <processor_Registo_de_Flags> is unconnected in block <motherboard_processor>.
-   It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <processor_MUX_PC> is unconnected in block <motherboard_processor>.
-   It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <processor_is_zero> is unconnected in block <motherboard_processor>.
-   It will be removed from the design.
+Reading core <ALU.ngc>.
+Loading core <ALU> for timing and area information for instance <processor_ALU>.
 
 Synthesizing (advanced) Unit <Memoria_de_Dados>.
 INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <dados_M>
@@ -412,24 +361,13 @@ Macro Statistics
  256x8-bit single-port block RAM                       : 1
  32x15-bit single-port distributed Read Only RAM       : 1
  8x8-bit dual-port distributed RAM                     : 1
-# Adders/Subtractors                                   : 2
- 8-bit adder                                           : 1
- 8-bit subtractor                                      : 1
 # Counters                                             : 1
  8-bit up counter                                      : 1
 # Registers                                            : 33
  Flip-Flops                                            : 33
-# Multiplexers                                         : 13
- 1-bit 12-to-1 multiplexer                             : 8
+# Multiplexers                                         : 2
  1-bit 7-to-1 multiplexer                              : 1
- 8-bit 13-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 2
  8-bit 4-to-1 multiplexer                              : 1
-# Logic shifters                                       : 2
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
-# Xors                                                 : 2
- 8-bit xor2                                            : 2
 
 =========================================================================
 
@@ -437,42 +375,39 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <processor_Registo_de_Flags/S_FLAG> (without init value) has a constant value of 0 in block <Processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2973 - All outputs of instance <processor_ALU> of block <ALU> are unconnected in block <Processor>. Underlying logic will be removed.
-
-Optimizing unit <motherboard> ...
 
 Optimizing unit <Processor> ...
+
+Optimizing unit <motherboard> ...
 
 Optimizing unit <Gestor_de_Perifericos> ...
 
 Optimizing unit <banco_de_registos> ...
-
-Optimizing unit <ALU> ...
-WARNING:Xst:1710 - FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_7> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_6> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_5> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_4> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_3> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_2> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_0> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_1> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_0> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_7> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_6> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_5> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_4> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_3> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_2> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_1> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_2> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_3> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_4> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_5> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_6> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando1_7> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_0> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_1> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_2> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_3> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_4> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_5> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_6> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_banco_de_registos/operando2_7> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_0> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_1> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_2> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_3> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_4> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_5> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_6> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <motherboard_processor/processor_Gestor_de_Perifericos/POUT_7> (without init value) has a constant value of 0 in block <motherboard>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <motherboard_Memoria_de_Dados/Mram_ram> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_7> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_6> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_5> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_4> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_3> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_2> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_1> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_0> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_7> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_6> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_5> of sequential type is unconnected in block <motherboard>.
@@ -481,14 +416,6 @@ WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/d
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_2> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_1> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:2677 - Node <motherboard_processor/processor_Gestor_de_Perifericos/dados_IN_0> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_7> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_6> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_5> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_4> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_3> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_2> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_1> of sequential type is unconnected in block <motherboard>.
-WARNING:Xst:2677 - Node <motherboard_processor/processor_banco_de_registos/operando2_0> of sequential type is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos8> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos7> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos6> is unconnected in block <motherboard>.
@@ -497,6 +424,14 @@ WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/proc
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos3> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos2> is unconnected in block <motherboard>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <motherboard_processor/processor_banco_de_registos/Mram_array_registos1> is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_7> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_6> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_5> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_4> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_3> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_2> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_1> of sequential type is unconnected in block <motherboard>.
+WARNING:Xst:2677 - Node <motherboard_processor/processor_PC/endereco_0> of sequential type is unconnected in block <motherboard>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -529,10 +464,22 @@ Top Level Output File Name         : motherboard.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1
-#      GND                         : 1
-# IO Buffers                       : 8
-#      OBUF                        : 8
+# BELS                             : 128
+#      GND                         : 2
+#      LUT2                        : 24
+#      LUT3                        : 6
+#      LUT4                        : 10
+#      LUT5                        : 14
+#      LUT6                        : 33
+#      MUXCY                       : 14
+#      MUXF7                       : 8
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 8
+#      LD                          : 8
+# IO Buffers                       : 36
+#      IBUF                        : 20
+#      OBUF                        : 16
 
 Device utilization summary:
 ---------------------------
@@ -541,13 +488,16 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:               8  out of  126800     0%  
+ Number of Slice LUTs:                   87  out of  63400     0%  
+    Number used as Logic:                87  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:     87
+   Number with an unused Flip Flop:      79  out of     87    90%  
+   Number with an unused LUT:             0  out of     87     0%  
+   Number of fully used LUT-FF pairs:     8  out of     87     9%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          18
@@ -573,7 +523,15 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
+Clock Signal                                                                                                                       | Clock buffer(FF name)                                    | Load  |
+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
+motherboard_processor/processor_ALU/SEL_ALU[3]_PWR_9_o_Mux_14_o(motherboard_processor/processor_ALU/SEL_ALU[3]_PWR_9_o_Mux_14_o1:O)| NONE(*)(motherboard_processor/processor_ALU/ALU.vector_6)| 8     |
+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -600,14 +558,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.08 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.29 secs
  
 --> 
 
-Total memory usage is 4617412 kilobytes
+Total memory usage is 4617596 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   67 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   54 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 
