@@ -1,0 +1,8 @@
+vhdtdtfi -prj PEPE-8 -o C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.tfi -module Processor -template C:/Tools/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work Rom_de_descodificacao.vhd -lib work Registo_de_Flags.vhd -lib work PC.vhd -lib work MUX_R.vhd -lib work MUX_PC.vhd -lib work is_zero.vhd -lib work Gestor_de_Perifericos.vhd -lib work banco_de_registos.vhd -lib work ALU.vhd -lib work Processor.vhd 
+vhdtdtfi -prj PEPE-8 -o C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.tfi -module Processor -template C:/Tools/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work Rom_de_descodificacao.vhd -lib work Registo_de_Flags.vhd -lib work PC.vhd -lib work MUX_R.vhd -lib work MUX_PC.vhd -lib work is_zero.vhd -lib work Gestor_de_Perifericos.vhd -lib work banco_de_registos.vhd -lib work ALU.vhd -lib work Processor.vhd 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 
+xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Processor.syr" 

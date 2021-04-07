@@ -80,15 +80,15 @@ BEGIN
                 when "01111" => sel_ALU <= "1010"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "10"; escr_F <= '1'; sel_F <= "XXX"; -- CMP Ri, Rj
 
                 -- Jump
-                when "10000" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "011"; -- JG constante
-                when "10001" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "010"; -- JNE constante
-                when "10010" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "100"; -- JL constante
-                when "10011" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "01"; escr_F <= '0'; sel_F <= "XXX"; -- JMP constante
-                when "10100" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '1'; sel_F <= "001"; -- JN Ri, constante
-                when "10101" => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '1'; sel_F <= "000"; -- JZ Ri, constante    
+                when "10000" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "011"; -- JG constante
+                when "10001" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "010"; -- JNE constante
+                when "10010" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '0'; sel_F <= "100"; -- JL constante
+                when "10011" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "01"; escr_F <= '0'; sel_F <= "XXX"; -- JMP constante
+                when "10100" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '1'; sel_F <= "001"; -- JN Ri, constante
+                when "10101" => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "00"; escr_F <= '1'; sel_F <= "000"; -- JZ Ri, constante    
                 
                 -- Other
-                when others => sel_ALU <= "XXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "10"; escr_F <= '0'; sel_F <= "XXX"; -- NOP
+                when others => sel_ALU <= "XXXX"; escr_P <= '0'; sel_D <= "XX"; escr_R <= '0'; WR <= '0'; sel_PC <= "10"; escr_F <= '0'; sel_F <= "XXX"; -- NOP
             
             end case ;            
                 

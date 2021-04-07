@@ -89,7 +89,7 @@ ARCHITECTURE struct OF Processor IS
     COMPONENT MUX_R IS
 
         PORT (
-            SEL_D : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+            sel_D : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
             constante : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
             dados_M : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
             dados_IN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -210,11 +210,11 @@ ARCHITECTURE struct OF Processor IS
 
 BEGIN
 
-    signal_is_zero <= signal_operando1(7);
+    signal_bit_maior_peso <= signal_operando1(7);
 
     processor_PC : PC PORT MAP(clk, reset, constante, signal_ESCR_PC, endereco);
     processor_Rom_de_Descodificacao : Rom_de_Descodificacao PORT MAP(opcode, reg, WR, signal_escr_P, signal_sel_D, signal_sel_R2, signal_sel_R1, signal_ESCR_R, signal_sel_ALU, signal_escr_F, signal_sel_F, signal_SEL_PC);
-    processor_MUX_R : MUX_R PORT MAP(constante, dados_M, signal_dados_IN, signal_resultado, signal_dados_R);
+    processor_MUX_R : MUX_R PORT MAP(signal_sel_D, constante, dados_M, signal_dados_IN, signal_resultado, signal_dados_R);
     processor_banco_de_registos : banco_de_registos PORT MAP(clk, signal_sel_R2, signal_sel_R1, signal_escr_R, signal_dados_R, signal_operando1, signal_operando2);
     processor_MUX_PC : MUX_PC PORT MAP(signal_S_FLAG, signal_SEL_PC, signal_ESCR_PC);
     processor_Registo_de_Flags : Registo_de_Flags PORT MAP(clk, signal_is_zero, signal_R_FLAG, signal_ESCR_F, signal_bit_maior_peso, signal_SEL_F, signal_S_FLAG);

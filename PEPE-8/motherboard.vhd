@@ -17,8 +17,8 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,25 +29,53 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity motherboard is
-    Port ( clk : in  STD_LOGIC;
-           reset : in  STD_LOGIC;
-           endereco : in  STD_LOGIC_VECTOR (7 downto 0);
-           PIN : in  STD_LOGIC_VECTOR (7 downto 0);
-			  WR : in  STD_LOGIC;
-           operando1 : in  STD_LOGIC_VECTOR (7 downto 0));
-			  
-           POUT : out  STD_LOGIC_VECTOR (7 downto 0);
-           opcode : out  STD_LOGIC_VECTOR (4 downto 0);
-           reg : out  STD_LOGIC_VECTOR (5 downto 0);
-           constante : out  STD_LOGIC_VECTOR (7 downto 0);
+ENTITY motherboard IS
 
-end motherboard;
+    PORT (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        endereco : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        PIN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        WR : IN STD_LOGIC;
+        operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 
-architecture struct of motherboard is
+        POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        opcode : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+        reg : OUT STD_LOGIC_VECTOR (5 DOWNTO 0);
+        constante : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+    );
 
-begin
+END motherboard;
+
+ARCHITECTURE struct OF motherboard IS
+
+    COMPONENT Memoria_de_Instrucoes IS
+
+        PORT (
+            endereco : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            opcode : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+            reg : OUT STD_LOGIC_VECTOR (5 DOWNTO 0);
+            constante : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        );
+
+    END COMPONENT;
+
+    COMPONENT Memoria_de_Dados IS
+
+        PORT (
+            clk : IN STD_LOGIC;
+            constante : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            dados_M : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+            WR : IN STD_LOGIC);
+
+    END COMPONENT;
+
+    -- Memoria de instruções signals
 
 
-end struct;
+    -- Memoria de dados signals
 
+
+BEGIN
+END struct;
