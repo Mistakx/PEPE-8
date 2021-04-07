@@ -36,8 +36,9 @@ ENTITY Memoria_de_Dados IS
         clk : IN STD_LOGIC;
         constante : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        dados_M : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        WR : IN STD_LOGIC);
+        WR : IN STD_LOGIC;
+        dados_M : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+    );
 
 END Memoria_de_Dados;
 
@@ -45,10 +46,10 @@ ARCHITECTURE Behavioral OF Memoria_de_Dados IS
 
 BEGIN
 
-    memoria_de_dados : PROCESS (clk)
+    memoria_de_dados : PROCESS (clk, constante, operando1, WR)
 
         TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
-        variable ram : ram_type;
+        VARIABLE ram : ram_type;
 
     BEGIN
 

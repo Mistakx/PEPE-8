@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    13:00:04 03/29/2021 
+-- Create Date:    20:46:36 04/07/2021 
 -- Design Name: 
 -- Module Name:    test - Behavioral 
 -- Project Name: 
@@ -17,8 +17,8 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,35 +29,48 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity test is
-    Port ( output1 : out  STD_LOGIC;
-			  output2 : out  STD_LOGIC;
-			  output3 : out STD_LOGIC_VECTOR (7 DOWNTO 0);
-			  input : in STD_LOGIC
-	 );
-end test;
+ENTITY test IS
 
-architecture Behavioral of test is
+	PORT (
+		input : IN STD_LOGIC;
+		output1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		output2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
 
- TYPE ram_type IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(1 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
- signal ram : ram_type;
+END test;
 
-begin
+ARCHITECTURE Behavioral OF test IS
 
-	process (input)
+BEGIN
+
+	proc_name: process(input)
 	
+	VARIABLE temp1 : STD_LOGIC;
+	VARIABLE temp2 : STD_LOGIC_VECTOR (7 DOWNTO 0);
+	VARIABLE temp3 : STD_LOGIC_VECTOR (7 DOWNTO 0);
+
 	begin
-	
-	
-	case( input ) is
-	
-		when '1' => ram(1)(1) <= '1';
-		when others => null;
-		
-	end case ;
-	
-	end process;
 
+	temp2 := "00000011";
+	temp3 := "10000011";
 
-end Behavioral;
+	CASE(input) IS
 
+		WHEN '1' =>
+
+		IF (temp2 = "00000011") THEN
+			output1 <= "11111110";
+		end if;
+			
+		IF (temp3 = "10000011") THEN
+			output2 <= "11111111";
+			
+		END IF;
+
+		WHEN OTHERS => NULL;
+
+	END CASE;
+	
+	end process proc_name;
+
+END Behavioral;

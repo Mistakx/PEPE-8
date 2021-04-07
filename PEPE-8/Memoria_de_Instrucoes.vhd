@@ -46,24 +46,47 @@ ARCHITECTURE Behavioral OF Memoria_de_Instrucoes IS
 BEGIN
 
     memoria_instrucoes : PROCESS (endereco)
-	 
-	 TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(18 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
-    VARIABLE ram : ram_type;
+
+        TYPE ram_type IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(18 DOWNTO 0); -- Instruction has 19 bits, 5 opcode, 3 R1, 3 R2, 8 constante
+        VARIABLE ram : ram_type;
 
     BEGIN
 
         CASE(endereco) IS
 
+            --LD R0, 14  
             WHEN "00000000" => opcode <= "00010";
             reg <= "000XXX";
-            constante <= "00000000";
+            constante <= "00001110";
 
+            --LD R1, 26
             WHEN "00000001" => opcode <= "00010";
             reg <= "001XXX";
-            constante <= "00000001";
-				
-				WHEN "00000010" => opcode <= "00010";
+            constante <= "00011010";
+
+            --LD R2, -1  
+            WHEN "00000010" => opcode <= "00010";
             reg <= "010XXX";
+            constante <= "11111111";
+
+            --LD R3, 1  
+            WHEN "00000011" => opcode <= "00010";
+            reg <= "011XXX";
+            constante <= "00000001";
+-- __________________________________________________________________-
+            -- ST [0], R2
+            WHEN "00000100" => opcode <= "00100";
+            reg <= "010XXX";
+            constante <= "00000000";
+
+            --ST [1], R0
+            WHEN "00000101" => opcode <= "00100";
+            reg <= "000XXX";
+            constante <= "00000001";
+
+            --ST [2], R0
+            WHEN "00000110" => opcode <= "00100";
+            reg <= "000XXX";
             constante <= "00000010";
 
             WHEN OTHERS => opcode <= "XXXXX";

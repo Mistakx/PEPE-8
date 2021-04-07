@@ -86,7 +86,19 @@ BEGIN
             WHEN "1001" => vector := STD_LOGIC_VECTOR(shift_right(signed(operando1), to_integer(unsigned(operando2))));
 
             -- < R_FLAG = 0; > R_FLAG = 1; /= R_FLAG = 2
-            WHEN "1010" => -- TODO
+            WHEN "1010" =>
+
+            IF (operando1 < operando2) THEN
+                R_FLAG(0) <= '1';
+            END IF;
+
+            IF (operando1 > operando2) THEN
+                R_FLAG(1) <= '1';
+            END IF;
+
+            IF (operando1 /= operando2) THEN
+                R_FLAG(2) <= '1';
+            END IF;
 
             WHEN OTHERS => vector := "00000000";
 

@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   20:19:29 04/03/2021
+-- Create Date:   21:48:39 04/07/2021
 -- Design Name:   
 -- Module Name:   C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/test_test_bench.vhd
 -- Project Name:  PEPE-8
@@ -41,10 +41,9 @@ ARCHITECTURE behavior OF test_test_bench IS
  
     COMPONENT test
     PORT(
-         output1 : OUT  std_logic;
-         output2 : OUT  std_logic;
-         output3 : OUT  std_logic_vector(7 downto 0);
-         input : IN  std_logic
+         input : IN  std_logic;
+         output1 : OUT  std_logic_vector(7 downto 0);
+         output2 : OUT  std_logic_vector(7 downto 0)
         );
     END COMPONENT;
     
@@ -53,33 +52,32 @@ ARCHITECTURE behavior OF test_test_bench IS
    signal input : std_logic := '0';
 
  	--Outputs
-   signal output1 : std_logic;
-   signal output2 : std_logic;
-   signal output3 : std_logic_vector(7 downto 0);
+   signal output1 : std_logic_vector(7 downto 0);
+   signal output2 : std_logic_vector(7 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
- 
+
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: test PORT MAP (
+          input => input,
           output1 => output1,
-          output2 => output2,
-          output3 => output3,
-          input => input
+          output2 => output2
         );
 
 
- 
 
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
 		input <= '1';
+		wait for 100 ns;	
+		input <= '0';
+		wait for 100 ns;	
 
       -- insert stimulus here 
 

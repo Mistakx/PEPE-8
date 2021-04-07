@@ -61,6 +61,7 @@ BEGIN
                 dados_IN <= PIN;
 
             END IF;
+				
         END IF;
 
     END PROCESS gestor_de_perifericos;
