@@ -32,8 +32,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY is_zero IS
 
     PORT (
-        input : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        output : OUT STD_LOGIC
+        operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        is_zero : OUT STD_LOGIC
     );
 
 END is_zero;
@@ -42,15 +42,15 @@ ARCHITECTURE Behavioral OF is_zero IS
 
 BEGIN
 
-    zero : PROCESS (input)
+    zero : PROCESS (operando1)
 
     BEGIN
 
-        IF (input = "00000000") THEN
-            output <= '1';
+        IF (operando1 = "00000000") THEN
+            is_zero <= '1';
 
         ELSE
-            output <= '0';
+            is_zero <= '0';
 
         END IF;
 

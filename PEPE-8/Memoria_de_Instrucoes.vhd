@@ -52,16 +52,6 @@ BEGIN
 
     begin
         
-        -- Opcode
-        opcode(4) <= ramI
-        opcode(3) <= 
-        opcode(2) <= 
-        opcode(1) <= 
-        opcode(0) <= 
-        -- Reg
-
-        -- Constante
-
 
     end process memoria_instrucoes;
 

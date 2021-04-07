@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: is_zero.prj
 
@@ -251,17 +251,17 @@ Timing constraint: Default path analysis
   Total number of paths / destination ports: 8 / 1
 -------------------------------------------------------------------------
 Delay:               1.281ns (Levels of Logic = 4)
-  Source:            input<2> (PAD)
-  Destination:       output (PAD)
+  Source:            operando1<2> (PAD)
+  Destination:       is_zero (PAD)
 
-  Data Path: input<2> to output
+  Data Path: operando1<2> to is_zero
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.511  input_2_IBUF (input_2_IBUF)
-     LUT3:I0->O            1   0.097   0.295  output<7>_SW0 (N2)
-     LUT6:I5->O            1   0.097   0.279  output<7> (output_OBUF)
-     OBUF:I->O                 0.000          output_OBUF (output)
+     IBUF:I->O             1   0.001   0.511  operando1_2_IBUF (operando1_2_IBUF)
+     LUT3:I0->O            1   0.097   0.295  is_zero<7>_SW0 (N2)
+     LUT6:I5->O            1   0.097   0.279  is_zero<7> (is_zero_OBUF)
+     OBUF:I->O                 0.000          is_zero_OBUF (is_zero)
     ----------------------------------------
     Total                      1.281ns (0.195ns logic, 1.086ns route)
                                        (15.2% logic, 84.8% route)
@@ -274,12 +274,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 26.00 secs
-Total CPU time to Xst completion: 25.53 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 25.10 secs
  
 --> 
 
-Total memory usage is 4617456 kilobytes
+Total memory usage is 4617476 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

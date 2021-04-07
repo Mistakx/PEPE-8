@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_SIGNED.ALL;
+
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,6 +34,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY Processor IS
 
     PORT (
+        clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         opcode : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
         reg : IN STD_LOGIC_VECTOR (5 DOWNTO 0);
@@ -40,7 +43,6 @@ ENTITY Processor IS
         PIN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 
         endereco : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        constante : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         WR : OUT STD_LOGIC;
         operando1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         POUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
@@ -61,7 +63,7 @@ ARCHITECTURE struct OF Processor IS
             endereco : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
 
-    END PC;
+    END COMPONENT;
 
     -- ROM de descodificação
     COMPONENT Rom_de_Descodificacao IS
@@ -81,7 +83,7 @@ ARCHITECTURE struct OF Processor IS
             sel_PC : OUT STD_LOGIC_VECTOR (1 DOWNTO 0)
         );
 
-    END Rom_de_Descodificacao;
+    END COMPONENT;
 
     -- MUX R
     COMPONENT MUX_R IS
@@ -94,7 +96,7 @@ ARCHITECTURE struct OF Processor IS
             resultado : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
             dados_R : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
 
-    END MUX_R;
+    END COMPONENT;
 
     -- Banco de registos
     COMPONENT banco_de_registos IS
@@ -109,7 +111,7 @@ ARCHITECTURE struct OF Processor IS
             operando2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
         );
 
-    END banco_de_registos;
+    END COMPONENT;
 
     -- MUX PC
     COMPONENT MUX_PC IS
@@ -120,7 +122,7 @@ ARCHITECTURE struct OF Processor IS
             ESCR_PC : OUT STD_LOGIC
         );
 
-    END MUX_PC;
+    END COMPONENT;
 
     -- Registo de flags
     COMPONENT Registo_de_Flags IS
@@ -135,7 +137,7 @@ ARCHITECTURE struct OF Processor IS
             S_FLAG : OUT STD_LOGIC
         );
 
-    END Registo_de_Flags;
+    END COMPONENT;
 
     -- ALU
     COMPONENT ALU IS
@@ -148,7 +150,7 @@ ARCHITECTURE struct OF Processor IS
             R_FLAG : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
         );
 
-    END ALU;
+    END COMPONENT;
 
     -- Gestor de periféricos
     COMPONENT Gestor_de_Perifericos IS
@@ -162,57 +164,62 @@ ARCHITECTURE struct OF Processor IS
             dados_IN : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
         );
 
-    END Gestor_de_Perifericos;
+    END COMPONENT;
 
     -- Is zero
     COMPONENT is_zero IS
 
         PORT (
-            input : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-            output : OUT STD_LOGIC
+            operando1 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            is_zero : OUT STD_LOGIC
         );
 
-    END is_zero;
+    END COMPONENT;
 
     -- Process Counter signals
-    SIGNAL ESCR_PC : STD_LOGIC;
+    SIGNAL signal_ESCR_PC : STD_LOGIC;
 
     -- Rom de descodificação signals
-    SIGNAL SEL_PC : STD_LOGIC_VECTOR(1 DOWNTO 0);
-    SIGNAL SEL_F : STD_LOGIC_VECTOR(2 DOWNTO 0)
-    SIGNAL ESCR_F : STD_LOGIC;
-    SIGNAL SEL_ALU : STD_LOGIC_VECTOR(3 DOWNTO 0);
-    SIGNAL ESC_R : STD_LOGIC;
-    SIGNAL SEL_R1 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL SEL_R2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL SEL_D : STD_LOGIC_VECTOR(1 DOWNTO 0);
-    SIGNAL ESCR_P : STD_LOGIC;
+    SIGNAL signal_SEL_PC : STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL signal_SEL_F : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL signal_ESCR_F : STD_LOGIC;
+    SIGNAL signal_SEL_ALU : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL signal_ESCR_R : STD_LOGIC;
+    SIGNAL signal_SEL_R1 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL signal_SEL_R2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL signal_SEL_D : STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL signal_ESCR_P : STD_LOGIC;
 
     -- Mux R signals
-    SIGNAL dados_IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL resultado STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_dados_IN : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_resultado : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	 SIGNAL signal_dados_R: STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     -- Banco de registos signals
-    SIGNAL operando1 STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL operando2 STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_operando1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_operando2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     -- Registo de flags signals
-    SIGNAL r_flag STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL bit_maior_peso STD_LOGIC;
-    
+    SIGNAL signal_r_flag : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL signal_bit_maior_peso : STD_LOGIC;
+	 SIGNAL signal_s_flag : STD_LOGIC;
+
     -- Is zero signals
-    SIGNAL is_zero STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL signal_is_zero : STD_LOGIC;
+	  
 
 BEGIN
 
-    processor_PC : PC(clk, reset, constante, ESCR_PC, endereco);
-    processor_Rom_de_Descodificacao : Rom_de_Descodificacao(opcode, reg, WR, escr_P, sel_D, sel_R2, sel_R1, escr_R, sel_ALU, escr_F, sel_F, sel_PC);
-    processor_MUX_R : MUX_R(constante, dados_M, dados_IN, resultado, dados_R);
-    processor_banco_de_registos : banco_de_registos(clk, sel_R2, sel_R1, escr_R, dados_R, operando1, operando2);
-    processor_MUX_PC : MUX_PC(S_FLAG, SEL_PC, ESCR_PC);
-    processor_Registo_de_Flags : Registo_de_Flags(clk, is_zero, R_FLAG, ESCR_F, bit_maior_peso, SEL_FLAG, S_FLAG);
-    processor_ALU : ALU(SEL_ALU, operando1, operando2, resultado, R_FLAG);
-    processor_Gestor_de_Perifericos : Gestor_de_Perifericos(clk, ESCR_P, PIN, operando1, POUT, dados_IN);
-    processor_is_zero : is_zero(input, output);
-    
-END Behavioral;
+    signal_is_zero <= signal_operando1(7);
+
+    processor_PC : PC PORT MAP(clk, reset, constante, signal_ESCR_PC, endereco);
+    processor_Rom_de_Descodificacao : Rom_de_Descodificacao PORT MAP(opcode, reg, WR, signal_escr_P, signal_sel_D, signal_sel_R2, signal_sel_R1, signal_ESCR_R, signal_sel_ALU, signal_escr_F, signal_sel_F, signal_SEL_PC);
+    processor_MUX_R : MUX_R PORT MAP(constante, dados_M, signal_dados_IN, signal_resultado, signal_dados_R);
+    processor_banco_de_registos : banco_de_registos PORT MAP(clk, signal_sel_R2, signal_sel_R1, signal_escr_R, signal_dados_R, signal_operando1, signal_operando2);
+    processor_MUX_PC : MUX_PC PORT MAP(signal_S_FLAG, signal_SEL_PC, signal_ESCR_PC);
+    processor_Registo_de_Flags : Registo_de_Flags PORT MAP(clk, signal_is_zero, signal_R_FLAG, signal_ESCR_F, signal_bit_maior_peso, signal_SEL_F, signal_S_FLAG);
+    processor_ALU : ALU PORT MAP(signal_SEL_ALU, signal_operando1, signal_operando2, signal_resultado, signal_R_FLAG);
+    processor_Gestor_de_Perifericos : Gestor_de_Perifericos PORT MAP(clk, signal_ESCR_P, PIN, signal_operando1, POUT, signal_dados_IN);
+    processor_is_zero : is_zero PORT MAP(signal_operando1, signal_is_zero);
+
+END struct;
