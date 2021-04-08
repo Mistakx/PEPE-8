@@ -54,40 +54,65 @@ BEGIN
 
         CASE(endereco) IS
 
-            --LD R0, 14  
+            -- Loading constante to Ri
+
+            --LD R0, 0  
             WHEN "00000000" => opcode <= "00010";
             reg <= "000XXX";
-            constante <= "00001110";
-
-            --LD R1, 26
-            WHEN "00000001" => opcode <= "00010";
-            reg <= "001XXX";
-            constante <= "00011010";
-
-            --LD R2, -1  
-            WHEN "00000010" => opcode <= "00010";
-            reg <= "010XXX";
-            constante <= "11111111";
-
-            --LD R3, 1  
-            WHEN "00000011" => opcode <= "00010";
-            reg <= "011XXX";
-            constante <= "00000001";
--- __________________________________________________________________-
-            -- ST [0], R2
-            WHEN "00000100" => opcode <= "00100";
-            reg <= "010XXX";
             constante <= "00000000";
 
-            --ST [1], R0
-            WHEN "00000101" => opcode <= "00100";
-            reg <= "000XXX";
+            --LD R1, 1
+            WHEN "00000001" => opcode <= "00010";
+            reg <= "001XXX";
             constante <= "00000001";
 
-            --ST [2], R0
-            WHEN "00000110" => opcode <= "00100";
-            reg <= "000XXX";
+            --LD R2, 2  
+            WHEN "00000010" => opcode <= "00010";
+            reg <= "010XXX";
             constante <= "00000010";
+
+            --LD R3, 3  
+            WHEN "00000011" => opcode <= "00010";
+            reg <= "011XXX";
+            constante <= "00000011";
+
+            -- __________________________________________________________________-
+
+            -- Set Memoria_de_Dados[constante] to Ri
+
+            -- ST [0], R0
+            WHEN "00000100" => opcode <= "00100";
+            reg <= "000XXX";
+            constante <= "00000000";
+
+            --ST [1], R1
+            WHEN "00000101" => opcode <= "00100";
+            reg <= "001XXX";
+            constante <= "00000001";
+
+            --ST [2], R2
+            WHEN "00000110" => opcode <= "00100";
+            reg <= "010XXX";
+            constante <= "00000010";
+
+            --ST [3], R3  
+            WHEN "00000111" => opCode <= "00100";
+            reg <= "011XXX";
+            constante <= "00000011";
+
+            -- __________________________________________________________________-
+
+            -- Loading peripheral input to Ri
+
+            -- LDP R6
+            WHEN "00001000" => opCode <= "00000";
+            reg <= "110XXX";
+            constante <= "XXXXXXXX";
+
+            -- LDP R7
+            WHEN "00001001" => opCode <= "00000";
+            reg <= "111XXX";
+            constante <= "XXXXXXXX";
 
             WHEN OTHERS => opcode <= "XXXXX";
             reg <= "XXXXXX";

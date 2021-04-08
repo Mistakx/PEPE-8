@@ -2,9 +2,9 @@ Command line:
    motherboard_test_bench_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  53610
+     -socket  50523
 
-Wed Apr 07 23:14:59 2021
+Thu Apr 08 21:07:20 2021
 
 
- Elaboration Time: 0.109375 sec
+ Elaboration Time: 0.0625 sec

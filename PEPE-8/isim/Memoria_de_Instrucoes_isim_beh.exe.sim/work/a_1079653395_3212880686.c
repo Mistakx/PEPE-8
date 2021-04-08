@@ -25,7 +25,7 @@ static const char *ng0 = "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/Memoria_de_Inst
 
 
 
-static void work_a_0118898488_3212880686_p_0(char *t0)
+static void work_a_1079653395_3212880686_p_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -438,9 +438,9 @@ LAB24:;
 }
 
 
-extern void work_a_0118898488_3212880686_init()
+extern void work_a_1079653395_3212880686_init()
 {
-	static char *pe[] = {(void *)work_a_0118898488_3212880686_p_0};
-	xsi_register_didat("work_a_0118898488_3212880686", "isim/motherboard_test_bench_isim_beh.exe.sim/work/a_0118898488_3212880686.didat");
+	static char *pe[] = {(void *)work_a_1079653395_3212880686_p_0};
+	xsi_register_didat("work_a_1079653395_3212880686", "isim/Memoria_de_Instrucoes_isim_beh.exe.sim/work/a_1079653395_3212880686.didat");
 	xsi_register_executes(pe);
 }
