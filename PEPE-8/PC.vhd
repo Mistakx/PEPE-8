@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_SIGNED.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -54,19 +54,19 @@ BEGIN
 
         IF rising_edge(clk) THEN
 
-            IF reset = '0' THEN
+            IF (reset = '0') THEN
 
-                IF ESCR_PC = '0' THEN
-
-                    counter := counter + 1;
-
-                ELSE
+                IF ESCR_PC = '1' THEN
 
                     counter := constante;
 
+                ELSE
+
+                    counter := counter + 1;
+
                 END IF;
 
-            ELSE
+            ELSIF (reset = '1') THEN
 
                 counter := "00000000";
 

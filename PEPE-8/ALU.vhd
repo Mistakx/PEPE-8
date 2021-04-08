@@ -90,14 +90,20 @@ BEGIN
 
             IF (operando1 < operando2) THEN
                 R_FLAG(0) <= '1';
+            ELSE
+                R_FLAG(0) <= '0';
             END IF;
 
             IF (operando1 > operando2) THEN
                 R_FLAG(1) <= '1';
+            ELSE
+                R_FLAG(1) <= '0';
             END IF;
 
             IF (operando1 /= operando2) THEN
                 R_FLAG(2) <= '1';
+            ELSE
+                R_FLAG(2) <= '0';
             END IF;
 
             WHEN OTHERS => vector := "00000000";

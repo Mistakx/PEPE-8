@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-
+USE IEEE.STD_LOGIC_SIGNED.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -50,26 +50,8 @@ BEGIN
 	VARIABLE temp3 : STD_LOGIC_VECTOR (7 DOWNTO 0);
 
 	begin
-
-	temp2 := "00000011";
-	temp3 := "10000011";
-
-	CASE(input) IS
-
-		WHEN '1' =>
-
-		IF (temp2 = "00000011") THEN
-			output1 <= "11111110";
-		end if;
-			
-		IF (temp3 = "10000011") THEN
-			output2 <= "11111111";
-			
-		END IF;
-
-		WHEN OTHERS => NULL;
-
-	END CASE;
+	temp2 := temp2 + '1';
+	output1 <= temp2;
 	
 	end process proc_name;
 

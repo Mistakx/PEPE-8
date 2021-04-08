@@ -1,9 +1,0 @@
-xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.syr" 
-xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 is_zero.ngc is_zero.ngd  
-map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o is_zero_map.ncd is_zero.ngd is_zero.pcf 
-xst -intstyle ise -ifn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.xst" -ofn "C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/is_zero.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 is_zero.ngc is_zero.ngd  
-map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o is_zero_map.ncd is_zero.ngd is_zero.pcf 
-map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o is_zero_map.ncd is_zero.ngd is_zero.pcf 
-map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o is_zero_map.ncd is_zero.ngd is_zero.pcf 

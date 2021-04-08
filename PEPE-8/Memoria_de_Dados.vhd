@@ -59,7 +59,7 @@ BEGIN
 
                 ram(to_integer(unsigned(constante))) := operando1;
 
-            ELSE
+            ELSIF (WR = '0') THEN
 
                 dados_M <= ram(to_integer(unsigned(constante)));
 

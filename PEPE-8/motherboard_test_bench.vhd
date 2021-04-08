@@ -89,15 +89,19 @@ BEGIN
 
    BEGIN
 
-      reset <= '0';
-      wait for 100ns;
+      PIN <= "00000011";
 		reset <= '1';
-		wait for 100ns;
+		
+		wait for clk_period * 1;
+
 		reset <= '0';
-		wait for 100ns;
-
-      WAIT;
-
+		
+		wait for clk_period * 1;
+		
+		wait for clk_period * 10;
+		
+		wait;
+		
    END PROCESS;
 
 END;

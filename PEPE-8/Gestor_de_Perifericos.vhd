@@ -56,12 +56,12 @@ BEGIN
 
                 POUT <= operando1;
 
-            ELSE
+            ELSIF (ESCR_P = '0') THEN
 
                 dados_IN <= PIN;
 
             END IF;
-				
+
         END IF;
 
     END PROCESS gestor_de_perifericos;

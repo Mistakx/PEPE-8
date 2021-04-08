@@ -26,6 +26,7 @@ Compiling package std_logic_arith
 Compiling package std_logic_signed
 Compiling architecture behavioral of entity Memoria_de_Instrucoes [memoria_de_instrucoes_default]
 Compiling architecture behavioral of entity Memoria_de_Dados [memoria_de_dados_default]
+Compiling package std_logic_unsigned
 Compiling architecture behavioral of entity PC [pc_default]
 Compiling architecture behavioral of entity Rom_de_Descodificacao [rom_de_descodificacao_default]
 Compiling architecture behavioral of entity MUX_R [mux_r_default]
@@ -39,8 +40,8 @@ Compiling architecture struct of entity Processor [processor_default]
 Compiling architecture struct of entity motherboard [motherboard_default]
 Compiling architecture behavior of entity motherboard_test_bench
 Time Resolution for simulation is 1ps.
-Waiting for 11 sub-compilation(s) to finish...
-Compiled 32 VHDL Units
+Waiting for 12 sub-compilation(s) to finish...
+Compiled 33 VHDL Units
 Built simulation executable C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_isim_beh.exe
-Fuse Memory Usage: 37844 KB
-Fuse CPU Usage: 1155 ms
+Fuse Memory Usage: 37368 KB
+Fuse CPU Usage: 1578 ms

@@ -53,7 +53,7 @@ BEGIN
     banco_de_registos : PROCESS (clk, sel_R1, sel_R2, escr_R, dados_R)
 
         TYPE array_registos_type IS ARRAY(0 TO 7) OF STD_LOGIC_VECTOR (7 DOWNTO 0);
-        variable array_registos : array_registos_type;
+        VARIABLE array_registos : array_registos_type;
 
     BEGIN
 
@@ -61,10 +61,10 @@ BEGIN
 
             IF (escr_R = '1') THEN
 
-            array_registos(to_integer(unsigned(SEL_R1))) := dados_R;
+                array_registos(to_integer(unsigned(SEL_R1))) := dados_R;
 
-            ELSE
-                
+            ELSIF (escr_R = '0') THEN
+
                 operando1 <= array_registos(to_integer(unsigned(SEL_R1)));
                 operando2 <= array_registos(to_integer(unsigned(SEL_R2)));
 
