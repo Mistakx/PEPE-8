@@ -56,11 +56,13 @@ BEGIN
 
                 POUT <= operando1;
 
-            ELSIF (ESCR_P = '0') THEN
-
-                dados_IN <= PIN;
-
             END IF;
+
+        END IF;
+
+        IF (ESCR_P = '0') THEN
+
+            dados_IN <= PIN;
 
         END IF;
 

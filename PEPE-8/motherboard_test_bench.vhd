@@ -89,7 +89,7 @@ BEGIN
 
    BEGIN
 
-      PIN <= "00000011";
+      PIN <= "10101010";
 		reset <= '1';
 		
 		wait for clk_period * 1;

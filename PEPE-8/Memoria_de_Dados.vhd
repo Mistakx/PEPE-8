@@ -59,13 +59,11 @@ BEGIN
 
                 ram(to_integer(unsigned(constante))) := operando1;
 
-            ELSIF (WR = '0') THEN
-
-                dados_M <= ram(to_integer(unsigned(constante)));
-
             END IF;
 
         END IF;
+
+        dados_M <= ram(to_integer(unsigned(constante)));
 
     END PROCESS memoria_de_dados;
 

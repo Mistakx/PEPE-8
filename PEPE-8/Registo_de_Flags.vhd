@@ -47,7 +47,13 @@ ARCHITECTURE Behavioral OF Registo_de_Flags IS
 
 BEGIN
 
-    registo_de_flags : PROCESS (clk)
+    registo_de_flags : PROCESS (clk, is_zero, R_FLAG, ESCR_F, bit_maior_peso, SEL_FLAG)
+
+        VARIABLE temp_is_zero : STD_LOGIC;
+        VARIABLE temp_R_FLAG : STD_LOGIC_VECTOR (2 DOWNTO 0);
+        VARIABLE temp_ESCR_F : STD_LOGIC;
+        VARIABLE temp_bit_maior_peso : STD_LOGIC;
+        VARIABLE temp_SEL_FLAG : STD_LOGIC_VECTOR (2 DOWNTO 0);
 
     BEGIN
 
@@ -55,20 +61,28 @@ BEGIN
 
             IF (ESCR_F = '1') THEN
 
-                CASE(SEL_FLAG) IS
-
-                    WHEN "000" => S_FLAG <= is_zero;
-                    WHEN "001" => S_FLAG <= bit_maior_peso;
-                    WHEN "010" => S_FLAG <= R_FLAG(2);
-                    WHEN "011" => S_FLAG <= R_FLAG(1);
-                    WHEN "100" => S_FLAG <= R_FLAG(0);
-                    WHEN OTHERS => S_FLAG <= '0';
-
-                END CASE;
+                temp_is_zero := is_zero;
+                temp_R_FLAG := R_FLAG;
+                temp_ESCR_F := ESCR_F;
+                temp_bit_maior_peso := bit_maior_peso;
+                temp_SEL_FLAG := SEL_FLAG;
 
             END IF;
 
         END IF;
+
+
+        CASE(SEL_FLAG) IS
+
+            WHEN "000" => S_FLAG <= temp_is_zero;
+            WHEN "001" => S_FLAG <= temp_bit_maior_peso;
+            WHEN "010" => S_FLAG <= temp_R_FLAG(2);
+            WHEN "011" => S_FLAG <= temp_R_FLAG(1);
+            WHEN "100" => S_FLAG <= temp_R_FLAG(0);
+            WHEN OTHERS => S_FLAG <= '0';
+
+        END CASE;
+
 
     END PROCESS registo_de_flags;
 

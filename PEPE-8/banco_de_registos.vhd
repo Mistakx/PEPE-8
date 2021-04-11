@@ -63,14 +63,12 @@ BEGIN
 
                 array_registos(to_integer(unsigned(SEL_R1))) := dados_R;
 
-            ELSIF (escr_R = '0') THEN
-
-                operando1 <= array_registos(to_integer(unsigned(SEL_R1)));
-                operando2 <= array_registos(to_integer(unsigned(SEL_R2)));
-
             END IF;
 
         END IF;
+
+        operando1 <= array_registos(to_integer(unsigned(SEL_R1)));
+        operando2 <= array_registos(to_integer(unsigned(SEL_R2)));
 
     END PROCESS banco_de_registos;
 

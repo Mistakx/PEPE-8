@@ -56,11 +56,11 @@ BEGIN
 
             IF (reset = '0') THEN
 
-                IF ESCR_PC = '1' THEN
+                IF (ESCR_PC = '1') THEN
 
                     counter := constante;
 
-                ELSE
+                ELSIF (ESCR_PC = '0') THEN
 
                     counter := counter + 1;
 
