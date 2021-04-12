@@ -43,5 +43,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 12 sub-compilation(s) to finish...
 Compiled 33 VHDL Units
 Built simulation executable C:/Users/Mistakx/Desktop/PEPE-8/PEPE-8/motherboard_test_bench_isim_beh.exe
-Fuse Memory Usage: 38132 KB
-Fuse CPU Usage: 1327 ms
+Fuse Memory Usage: 37496 KB
+Fuse CPU Usage: 1390 ms
